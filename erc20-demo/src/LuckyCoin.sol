@@ -12,10 +12,7 @@ contract LuckyCoin is ERC20, Ownable {
     string public constant _symbol = "LC";
     string public constant _name = "LuckyCoin";
 
-    constructor(address initialOwner)
-        ERC20(_name, _symbol)
-        Ownable(initialOwner)
-    {}
+    constructor(address initialOwner) ERC20(_name, _symbol) Ownable(initialOwner) {}
 
     function mint(uint256 amount) public onlyOwner {
         _mint(msg.sender, amount);
